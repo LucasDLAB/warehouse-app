@@ -11,7 +11,7 @@ describe "Usuario visita a tela inicial" do
 
 	end
 
-	it "e lista os galpões" do
+	it "e vê a lista os galpões" do
 		# Arrange
 		Warehouse.create(name:"Rio", code:"SDU",city:"Rio de Janeiro",area:60_000)
 		Warehouse.create(name:"Maceio", code:"MCZ",city:"Maceio",area:50_000)
