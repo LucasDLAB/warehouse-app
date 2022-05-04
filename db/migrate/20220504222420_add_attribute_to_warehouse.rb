@@ -1,0 +1,8 @@
+class AddAttributeToWarehouse < ActiveRecord::Migration[7.0]
+  def change
+    add_column :warehouses, :address, :string
+    add_column :warehouses, :cep, :string
+    add_column :warehouses, :description, :string
+    add_column :warehouses, :state, :string
+  end
+end

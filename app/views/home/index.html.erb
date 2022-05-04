@@ -1,22 +1,23 @@
-<h1>Sistema de Galpões e Estoque</h1>
-
 <h2>Galpões</h2>
-
-<%@warehouses.each do |w|%>
-	<dl>
-		<dt>
-			<%=w.name%>
-		</dt>
-		
-		<dd>
-			Código: <%=w.code%>
-		</dd>
-		
-		<dd>	
-			Cidade: <%=w.city%>
-		</dd>
-		<dd>
-			<%=w.area%> m²
-		</dd>	
-	</dl>
-<%end%>
+<section id="warehouses">
+	<div>
+		<%@warehouses.each do |w|%>
+				<dl>
+					<dt>
+						<%=link_to w.name, warehouse_path(w.id)%>
+					</dt>
+					
+					<dd>
+						Código: <%=w.code%>
+					</dd>
+					
+					<dd>	
+						Cidade: <%=w.city%>
+					</dd>
+					<dd>
+						<%=w.area%> m²
+					</dd>	
+				</dl>
+		<%end%>
+	</div>
+</section>
