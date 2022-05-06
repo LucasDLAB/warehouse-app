@@ -41,6 +41,18 @@ describe "Usuario cadastra um galpão" do
 		expect(page).to have_content("POA")
 		expect(page).to have_content("Porto Alegre")
 		expect(page).to have_content("20000 m²")
-		
+	end
+
+	it "e os campos não foram preenchidos" do 
+		# Arrange
+
+		# Act
+		visit root_path
+		click_on "Cadastrar Galpão"
+		click_on "Enviar"
+
+		# Assert
+		expect(current_path).to eql(warehouses_path)
+		expect(page).to have_content("É necessário preencher todos os campos")
 	end
 end
