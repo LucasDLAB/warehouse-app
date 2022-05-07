@@ -28,7 +28,7 @@ describe "Usuario cadastra um galpão" do
 		fill_in "Nome", with: "Salgado Filho"
 		fill_in "Descrição", with: "É o maior e mais movimentado galpão do Rio Grande do Sul"
 		fill_in "Código", with: "POA"
-		fill_in "Endereço", with: "Av. Severo Dullius, 90.010 - RS, CEP: 90200-310"
+		fill_in "Endereço", with: "Av. Severo Dullius"
 		fill_in "Cidade", with: "Porto Alegre"
 		fill_in "CEP", with: "90200-310"
 		fill_in "Estado", with: "RS"
@@ -42,4 +42,18 @@ describe "Usuario cadastra um galpão" do
 		expect(page).to have_content("Porto Alegre")
 		expect(page).to have_content("20000 m²")
 	end
+
+	it "com dados incompletos" do
+		# Arrange
+
+		# Act
+		visit root_path
+		click_on "Cadastrar Galpão"
+		fill_in "Nome", with: ""
+		fill_in "Descrição", with: ""
+		click_on "Enviar"
+
+		# Assert
+		expect(page).to have_content "Galpão não cadastrado."
+	end	
 end
