@@ -13,7 +13,7 @@ describe "Usuario visita a tela inicial" do
 
 	it "e vê a lista de galpões" do
 		# Arrange
-		Warehouse.create(name:"Rio", code:"SDU",city:"Rio de Janeiro",area:60_000,state:"RJ",
+		Warehouse.create!(name:"Rio", code:"SDU",city:"Rio de Janeiro",area:60_000,state:"RJ",
 											address:"Rua Alameda",cep:"23213-330",description:"Aeroporto de carga")
 
 		# Act

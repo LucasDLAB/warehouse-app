@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Usuário vê detalhes de um galpão" do
 	it 'e vê informações adicionais' do 
 	# Arrange
-	Warehouse.create(name:"Salgado Filho", code:"POA", city: "Porto Alegre", area:20_000,
+	Warehouse.create!(name:"Salgado Filho", code:"POA", city: "Porto Alegre", area:20_000,
 									 address:"Av. Severo Dullius, 90.010", cep:"90200-310", state:"RS",
 									 description:"É o maior e mais movimentado galpão do Rio Grande do Sul")
 	
