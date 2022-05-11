@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Warehouse, type: :model do
 	describe "#valid?" do
-		it "false when name is already in use" do
+		it "falso quando o nome já está em uso" do
 			# Arrange
 			first_warehouse =Warehouse.create(name:"Salgado Filho", code:"POA", city: "Porto Alegre", area:20_000,
 									 address:"Av. Severo Dullius, 90.010", cep:"90200-310", state:"RS",
@@ -15,7 +15,7 @@ RSpec.describe Warehouse, type: :model do
 			expect(result).to eql false
 		end
 
-		it "false when code is already in use" do
+		it "falso quando o código já está em uso" do
 			# Arrange
 			first_warehouse =Warehouse.create(name:"Salgado Filho", code:"POA", city: "Porto Alegre", area:20_000,
 									 address:"Av. Severo Dullius, 90.010", cep:"90200-310", state:"RS",
@@ -28,7 +28,7 @@ RSpec.describe Warehouse, type: :model do
 			expect(result).to eql false
 		end
 
-		it "false when cep has strings" do
+		it "falso quando cep possui letras" do
 			# Arrange
 			warehouse =Warehouse.create(name:"Salgado Filho", code:"POA", city: "Porto Alegre", area:20_000,
 									 address:"Av. Severo Dullius, 90.010", cep:"parada-310", state:"RS",
@@ -39,7 +39,7 @@ RSpec.describe Warehouse, type: :model do
 			expect(result).to eql false
 		end
 
-		it "false when cep with more than 9 chars" do
+		it "falso quando cep tem mais de 9 caracteres" do
 			# Arrange
 			warehouse = Warehouse.create(name:"Salgado Filho", code:"POA", city: "Porto Alegre", area:20_000,
 									 address:"Av. Severo Dullius, 90.010", cep:"902000-310", state:"RS",
@@ -51,7 +51,7 @@ RSpec.describe Warehouse, type: :model do
 		end
 
 
-		it "false when cep with less than 9 chars" do
+		it "falso quando cep tem menos de 9 caracteres" do
 			# Arrange
 			warehouse =Warehouse.create(name:"Salgado Filho", code:"POA", city: "Porto Alegre", area:20_000,
 									 address:"Av. Severo Dullius, 90.010", cep:"0-310", state:"RS",
@@ -62,7 +62,7 @@ RSpec.describe Warehouse, type: :model do
 			expect(result).to eql false
 		end
 
-		it "false when length of state is different of 2" do
+		it "falso quando o tamanho é diferente de 2" do
 			# Arrange
 			warehouse =Warehouse.create(name:"Salgado Filho", code:"POA", city: "Porto Alegre", area:20_000,
 									 address:"Av. Severo Dullius, 90.010", cep:"23450-310", state:"RSA",
@@ -74,7 +74,7 @@ RSpec.describe Warehouse, type: :model do
 		end
 
 
-		it "false when state is in lowercase" do
+		it "falso quando Estado é minúsculo" do
 			# Arrange
 			warehouse =Warehouse.create(name:"Salgado Filho", code:"POA", city: "Porto Alegre", area:20_000,
 									 address:"Av. Severo Dullius, 90.010", cep:"23450-310", state:"rs",
@@ -86,7 +86,7 @@ RSpec.describe Warehouse, type: :model do
 		end
 
 
-		it "false when state is a number" do
+		it "falso quando Estado é um número" do
 			# Arrange
 			warehouse =Warehouse.create(name:"Salgado Filho", code:"POA", city: "Porto Alegre", area:20_000,
 									 address:"Av. Severo Dullius, 90.010", cep:"23450-310", state:"22",
@@ -97,7 +97,7 @@ RSpec.describe Warehouse, type: :model do
 			expect(result).to eql false
 		end
 
-		it "false when length of the code is different of 3" do
+		it "falso quando o tamanho do código é diferente de 3" do
 			# Arrange
 			warehouse =Warehouse.create(name:"Salgado Filho", code:"POAW", city: "Porto Alegre", area:20_000,
 									 address:"Av. Severo Dullius, 90.010", cep:"23450-310", state:"RS",
@@ -108,7 +108,7 @@ RSpec.describe Warehouse, type: :model do
 			expect(result).to eql false
 		end
 
-		it "false when code is a number" do
+		it "falso quando o código é um número" do
 			# Arrange
 			warehouse =Warehouse.create(name:"Salgado Filho", code:"233", city: "Porto Alegre", area:20_000,
 									 address:"Av. Severo Dullius, 90.010", cep:"23450-310", state:"RS",
