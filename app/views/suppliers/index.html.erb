@@ -4,7 +4,7 @@
     <table>
       <thead>
         <tr>
-          <th>Nome</th>
+          <th>Razão Social</th>
           <th>Localização</th>
         </tr>
       </thead>
@@ -19,3 +19,9 @@
 <%else%>
   <p>Não existem fornecedores cadastrados</p>
 <% end %>
+
+<br>
+
+<div>
+  <%= link_to "Cadastrar novo fornecedor", new_supplier_path%>
+</div>

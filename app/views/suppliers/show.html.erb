@@ -1,0 +1,25 @@
+<h1>Fornecedor <%= @supplier.brand_name%></h1>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Razão Social</th>
+        <th>Nome Fantasia</th>
+        <th>Número de registro</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+      </tr>
+    </thead>
+      <tr>
+        <td><%=@supplier.brand_name%></td>
+        <td><%=@supplier.corporate_name%></td>
+        <td><%=@supplier.registration_number%></td>
+        <td><%=@supplier.email%></td>
+        <td><%=@supplier.phone%></td>
+        <td><%=@supplier.full_address%></td>
+      </tr>
+    <tbody
+  </table>
+</div>
