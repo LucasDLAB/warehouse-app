@@ -59,6 +59,5 @@ describe "Usuário cadastra um novo fornecedor" do
     expect(page).to have_content "Telefone não pode ficar em branco"
     expect(page).to have_content "Endereço Completo não pode ficar em branco"
     expect(page).to have_content "Número de registro não possui o tamanho esperado (13 caracteres)"
-
   end
 end

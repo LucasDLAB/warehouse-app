@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Supplier, type: :model do
   describe "#valid?" do
-    it "falso quando possui CNPJ não único" do
+    it "falso quando CNPJ não único" do
       # Arrange
       first_supplier = Supplier.create(brand_name:"Sony",corporate_name:"Sony Corporation Group",registration_number:"7894563116249",
                                       email:"sac@sony.com",phone:"2345-3232", full_address:"Av das Flores, 1001")
