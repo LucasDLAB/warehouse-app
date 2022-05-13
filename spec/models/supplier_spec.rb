@@ -8,7 +8,7 @@ RSpec.describe Supplier, type: :model do
                                       email:"sac@sony.com",phone:"2345-3232", full_address:"Av das Flores, 1001")
       second_supplier = Supplier.create(brand_name:"Samsung",corporate_name:"Samsung Eletronics",registration_number:"7894563116249",
                                         email:"sac@samsung.com",phone:"3422-4233", full_address:"Rua do Porto, 220")
-     
+      
       # Act
       result = second_supplier.valid?
      
