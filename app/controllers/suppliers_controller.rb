@@ -1,6 +1,6 @@
 class SuppliersController < ApplicationController
   before_action :set_supplier, only: [:show,:edit,:update]
-  before_action :remove_format_documentation, only: [:edit]
+  before_action :format_documentation, only: [:show]
   
   def index 
     @suppliers = Supplier.all
@@ -43,10 +43,11 @@ class SuppliersController < ApplicationController
                                       :email,:registration_number)
 		end
 
-    def remove_format_documentation
+    def format_documentation
       @supplier = Supplier.find(params[:id])
-      @supplier.registration_number.delete!(".")
-      @supplier.registration_number.delete!("/")
-      @supplier.registration_number.delete!("-")
+      @supplier.registration_number.insert(2, ".")
+      @supplier.registration_number.insert(6, ".")
+      @supplier.registration_number.insert(10, "/")
+      @supplier.registration_number.insert(15, "-")
     end
 end

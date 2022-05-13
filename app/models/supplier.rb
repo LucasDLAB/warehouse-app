@@ -8,15 +8,6 @@ class Supplier < ApplicationRecord
   #length
   validates :registration_number, length: {is:13}
   
-  after_validation :format_documentation
-  
-  private
-    def format_documentation
-      if self.registration_number.length == 13
-        self.registration_number.insert(2, ".")
-        self.registration_number.insert(6, ".")
-        self.registration_number.insert(10, "/")
-        self.registration_number.insert(15, "-")
-      end
-    end
+  #format 
+  validates :registration_number, format: {with:/[0-9]{13}/}
 end
