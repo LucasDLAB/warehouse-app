@@ -16,18 +16,6 @@ RSpec.describe Supplier, type: :model do
       expect(result).to eql false
     end
 
-    it "falso quando possui campos vazios" do
-      # Arrange
-      supplier = Supplier.create(brand_name:"",corporate_name:"",registration_number:"",
-                                email:"",phone:"", full_address:"")
-      
-      # Act
-      result = supplier.valid?
-      
-      # Assert
-      expect(result).to eql false
-    end
-
     it "falso quando o número de documentação possui mais de 13 caracteres" do
       # Arrange
       supplier = Supplier.create(brand_name:"Sony",corporate_name:"Sony Corporation Group",registration_number:"789456311624912",

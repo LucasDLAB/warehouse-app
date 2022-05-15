@@ -70,19 +70,6 @@ RSpec.describe ProductModel, type: :model do
 			expect(result).to eql false
 		end
 
-		it "Peso deve ser maior que 0" do
-			supplier = Supplier.create!(brand_name:"Sony", corporate_name:"Sony Group Corporation",
-	                               registration_number:"9278256900017", full_address:"Av das Palmas, 100",
-	                               email:"contato@sony.com", phone:"4003-2340")
-
-			pm = ProductModel.create(name:"TV 75", weight:45, height:0,
-	                        width:21 , length:34 , sku:"GGTV-BBAQX-PURO-0623", supplier:supplier)
-
-			result = pm.valid?
-			
-			expect(result).to eql false
-		end
-
 		it "Largura deve ser maior que 0" do
 			supplier = Supplier.create!(brand_name:"Sony", corporate_name:"Sony Group Corporation",
 	                               registration_number:"9278256900017", full_address:"Av das Palmas, 100",
