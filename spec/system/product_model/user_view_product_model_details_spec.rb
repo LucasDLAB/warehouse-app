@@ -7,7 +7,7 @@ describe "Usuário acessa a página de detalhes" do
                                email:"contato@sony.com", phone:"4003-2340")
 
 		ProductModel.create!(name:"TV 75", weight:45, height:120,
-                        width:21 , length:34 , sku:"GG-BB-PUR-06", supplier:supplier)
+                        width:21 , length:34 , sku:"GGTV-BBAQX-PURO-0623", supplier:supplier)
 
 		visit root_path 
 		click_on "Modelos de produto"
@@ -16,7 +16,7 @@ describe "Usuário acessa a página de detalhes" do
 		expect(page).to have_content "TV 75"
 		expect(page).to have_content "45"
 		expect(page).to have_content "120cm x 21cm x 34cm"
-		expect(page).to have_content "GG-BB-PUR-06"
+		expect(page).to have_content "GGTV-BBAQX-PURO-0623"
 		expect(page).to have_content "Sony"
 	end
 end

@@ -33,7 +33,7 @@ describe "Usuário cadastra um novo modelo de produto" do
 		fill_in "Altura", with: 120 
 		fill_in "Largura", with: 21
 		fill_in "Comprimento", with: 34
-		fill_in "SKU", with: "GG-BB-PUR-06"
+		fill_in "SKU", with: "GGTV-BBAQX-PURO-0623"
 		select "Sony", from: "Fornecedor" 
 		click_on "Enviar"
 
@@ -41,11 +41,11 @@ describe "Usuário cadastra um novo modelo de produto" do
     expect(page).to have_content "TV 75"
     expect(page).to have_content "45"
     expect(page).to have_content "120cm x 21cm x 34cm"
-    expect(page).to have_content "GG-BB-PUR-06"
+    expect(page).to have_content "GGTV-BBAQX-PURO-0623"
     expect(page).to have_content "Sony"
 	end
 
-	it "com sucesso" do
+	it "com dados incompletos" do
 		supplier = Supplier.create!(brand_name:"Sony", corporate_name:"Sony Group Corporation",
 															 registration_number:"9278256900017", full_address:"Av das Palmas, 100", 
                                email:"contato@sony.com", phone:"4003-2340")
@@ -63,5 +63,16 @@ describe "Usuário cadastra um novo modelo de produto" do
 		click_on "Enviar"
 
 		expect(page).to have_content "Modelo não cadastrado"
+		expect(page).to have_content "Nome não pode ficar em branco"
+    expect(page).to have_content "SKU não pode ficar em branco"
+    expect(page).to have_content "Peso não pode ficar em branco"
+    expect(page).to have_content "Altura não pode ficar em branco"
+    expect(page).to have_content "Comprimento não pode ficar em branco"
+    expect(page).to have_content "Largura não pode ficar em branco"
+    expect(page).to have_content "SKU não possui o tamanho esperado (20 caracteres)"
+    expect(page).to have_content "Peso não é um número"
+    expect(page).to have_content "Altura não é um número"
+    expect(page).to have_content "Comprimento não é um número"
+    expect(page).to have_content "Largura não é um número"
 	end
 end
