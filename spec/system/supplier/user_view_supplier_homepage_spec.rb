@@ -7,7 +7,9 @@ describe "Usuário acessa a página inicial de fornecedores" do
                     full_address:"Av das Palmas, 100" , email:"contato@sony.com", phone:"4003-2340")
     # Act
     visit root_path
-    click_on "Fornecedores"
+    within "nav" do
+      click_on "Fornecedores"
+    end
     # Assert
     expect(page).to have_content "Sony Group Corporation"
     expect(page).to have_content "Av das Palmas, 100"

@@ -1,0 +1,42 @@
+<h2>Cadastro de novo modelo</h2>
+
+<%= form_with(model:@product_model) do |pm|%>
+	<div>
+		<%= pm.label :name%>
+		<%= pm.text_field :name%>
+	</div>
+	
+	<div>
+		<%= pm.label :weight%>
+		<%= pm.number_field :weight%>
+	</div>
+
+	<div>
+		<%= pm.label :height%>
+		<%= pm.number_field :height%>
+	</div>
+
+	<div>
+		<%= pm.label :width%>
+		<%= pm.number_field :width%>
+	</div>
+	
+	<div>
+		<%= pm.label :length%>
+		<%= pm.number_field :length%>
+	</div>
+	
+	<div>
+		<%= pm.label :sku%>
+		<%= pm.text_field :sku%>
+	</div>
+
+	<div>
+		<%= pm.label :supplier_id%>
+		<%= pm.collection_select :supplier_id, @supplier, :id, :brand_name %>
+	</div>
+
+	<div>
+		<%= pm.submit "Enviar"%>
+	</div>
+<% end %>

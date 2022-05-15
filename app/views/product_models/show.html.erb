@@ -1,0 +1,20 @@
+<h2>Modelo de <%=@product_model.name%></h2>
+
+<div>
+	<dl>
+		<dt>Nome:</dt>
+		<dd><%=@product_model.name%></dd>
+
+		<dt>Peso:</dt>
+		<dd><%=@product_model.weight%></dd>
+		
+		<dt>Dimensões:</dt>
+		<dd><%=@product_model.height%>cm x <%=@product_model.width%>cm x <%=@product_model.length%>cm</dd>
+			
+		<dt>Código SKU</dt>
+		<dd><%=@product_model.sku%></dd>
+
+		<dt>Fornecedor</dt>
+		<dd><%=@product_model.supplier.brand_name%></dd>
+	</dl>
+</div>

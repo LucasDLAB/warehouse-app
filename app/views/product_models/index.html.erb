@@ -4,7 +4,7 @@
   <% @product_models.each do |pm| %>
     <dl>
       <dt>
-        <h2><%= pm.name%></h2>
+        <h2><%= link_to pm.name, pm%></h2>
       </dt>
 
       <dd>
@@ -15,3 +15,7 @@
 <% else%>
   <p>Não possui modelos cadastrados</p>
 <%end%>
+
+<div>
+  <%= link_to "Cadastrar novo modelo", new_product_model_path%>
+</div>

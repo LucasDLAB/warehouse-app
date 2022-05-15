@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      supplier: "Fornecedor"
+    attributes:
+      supplier:
+        brand_name: "Razão Social"
+        corporate_name: "Nome Fantasia"
+        registration_number: "Número de registro" 
+        email: "Email"
+        phone: "Telefone"
+        full_address: "Endereço Completo"
